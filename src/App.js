@@ -98,6 +98,10 @@ class App extends Component {
               <h5 className="ml-2">Made with React</h5>
             </div>
           </div>
+          <br />
+          <div className="row justify-content-center text-secondary">
+            <span> Tejasvp25 © 2020</span>
+          </div>
         </footer>
       </div>
     );
