@@ -32,7 +32,7 @@ class MusicCard extends Component {
 
     if (this.props.type === "songs") {
       return (
-        <div className="justify-content-center">
+        <div className="justify-content-center p2">
           <div className="row justify-content-center">
             <span>
               <span className="font-weight-bold">Song Title :</span>{" "}
@@ -71,7 +71,7 @@ class MusicCard extends Component {
       );
     }
     return (
-      <div className="justify-content-center">
+      <div className="justify-content-center p2">
         <div className="row justify-content-center">
           <span>
             <span className="font-weight-bold">Album Title :</span>{" "}
