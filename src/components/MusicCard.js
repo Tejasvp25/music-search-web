@@ -34,55 +34,53 @@ class MusicCard extends Component {
       return (
         <div className="justify-content-center p2">
           <div className="row justify-content-center">
-            <span>
-              <span className="font-weight-bold">Song Title :</span>{" "}
-              {song_title}
-            </span>
-          </div>
-          <div className="row justify-content-center">
-            <span>
-              <span className="font-weight-bold">Album :</span> {prop_obj.album}
-            </span>
-          </div>
-          {prop_obj.more_info === undefined ? null : (
-            <div className="row justify-content-center">
-              <span>
-                <span className="font-weight-bold">Primary Artists :</span>{" "}
-                {prop_obj.more_info.primary_artists}
+            <div className="col justify-content-center pb-2">
+              <span className="font-small float-left">Song Title</span>
+              <span className="font-weight-bold float-left"> {song_title}</span>
+            </div>
+            <div className="col justify-content-center pb-2">
+              <span className="font-small float-left">Album</span>
+              <span className="font-weight-bold float-left">
+                {prop_obj.album}
               </span>
             </div>
-          )}
-          <div className="row justify-content-center">
-            <span>
-              <span className="font-weight-bold">Singers :</span>{" "}
-              {prop_obj.more_info === undefined
-                ? prop_obj.singers
-                : prop_obj.more_info.singers}
-            </span>
-          </div>
-          {this.state.song_link === undefined ? null : (
-            <div className="row justify-content-center mt-2">
-              <a href={this.state.song_link}>
-                <button className="btn btn-danger"> Download Song </button>
-              </a>
+            {prop_obj.more_info === undefined ? null : (
+              <div className="col justify-content-center pb-2">
+                <span className="font-small float-left">Primary Artists</span>
+                <span className="font-weight-bold float-left">
+                  {prop_obj.more_info.primary_artists}
+                </span>
+              </div>
+            )}
+            <div className="col justify-content-center pb-2">
+              <span className="font-small float-left">Singers</span>
+              <span className="font-weight-bold float-left">
+                {prop_obj.more_info === undefined
+                  ? prop_obj.singers
+                  : prop_obj.more_info.singers}
+              </span>
             </div>
-          )}
+          </div>
         </div>
       );
     }
     return (
       <div className="justify-content-center p2">
         <div className="row justify-content-center">
-          <span>
-            <span className="font-weight-bold">Album Title :</span>{" "}
-            {prop_obj.title === undefined ? "" : prop_obj.title}
-          </span>
+          <div className="col justify-content-center">
+            <span className="font-small float-left">Album Title</span>
+            <span className="font-weight-bold float-left">
+              {prop_obj.title === undefined ? "" : prop_obj.title}
+            </span>
+          </div>
+          <div className="col justify-content-center">
+            <span className="font-small float-left">Music</span>
+            <span className="font-weight-bold float-left">
+              {prop_obj.music}
+            </span>
+          </div>
         </div>
-        <div className="row justify-content-center">
-          <span>
-            <span className="font-weight-bold">Music :</span> {prop_obj.music}
-          </span>
-        </div>{" "}
+
         {this.state.songs === undefined ? null : (
           <div className="row justify-content-center mt-2">
             <button
@@ -90,8 +88,7 @@ class MusicCard extends Component {
               data-toggle="modal"
               data-target={`#album${this.props.album.id}`}
             >
-              {" "}
-              View Songs{" "}
+              View Songs
             </button>
           </div>
         )}
@@ -149,31 +146,39 @@ class MusicCard extends Component {
   render() {
     return (
       <div
-        className="border-black Br-10px elevated-card grey-bg p-2"
+        className="border-black br-10px elevated-card grey-bg p-2"
         // style={{
         //   background: "rgba(0, 0, 0, 0.03)",
         // }}
       >
         <this.SongsModal />
-        <div className="row p-3">
+        <div className="row justify-content-center p-3">
           <div className="col-lg-4 col-md-6 col-sm-6 p-2">
             <img
-              className="Br-10px"
+              className="br-10px img-fluid"
               src={this.getImageUrl()}
               alt={
                 this.props.song === undefined
                   ? this.props.album.title
                   : this.props.song.title
               }
-              style={{
-                height: "8em",
-                width: "8em",
-              }}
+              // style={{
+              //   height: "8em",
+              //   width: "8em",
+              // }}
             ></img>
           </div>
           <div className="col-lg-8 col-sm-6 align-content-start">
             <this.InfoLayout />
           </div>
+          <br />
+          {this.state.song_link === undefined ? null : (
+            <div className="justify-content-center mt-2">
+              <a href={this.state.song_link}>
+                <button className="btn btn-danger"> Download Song </button>
+              </a>
+            </div>
+          )}
         </div>
       </div>
     );

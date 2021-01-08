@@ -84,12 +84,13 @@ input[type="text"].form-control:focus {
 .grey-bg {
   background-color: #fdfdfd;
 }
-.Br-10px {
+.br-10px {
   border-radius: 10px;
 }
 .elevated-card {
   box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
+  max-height: 100%;
 }
 
 .elevated-card:hover {
@@ -113,6 +114,20 @@ div.height-md {
 
 .red-text {
   color: red;
+}
+span.font-small {
+  font-size: 0.8em;
+  color: rgb(131, 130, 130);
+  font-weight: 500;
+  text-align: start !important;
+  word-wrap: break-word;
+}
+
+span.font-weight-bold {
+  font-size: 1em;
+  text-overflow: clip;
+  text-align: start !important;
+  word-wrap: break-word;
 }
 
 .body-dark {
