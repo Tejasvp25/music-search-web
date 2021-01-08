@@ -150,9 +150,9 @@ class MusicCard extends Component {
     return (
       <div
         className="border-black Br-10px elevated-card grey-bg p-2"
-        style={{
-          background: "rgba(0, 0, 0, 0.03)",
-        }}
+        // style={{
+        //   background: "rgba(0, 0, 0, 0.03)",
+        // }}
       >
         <this.SongsModal />
         <div className="row p-3">

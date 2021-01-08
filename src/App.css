@@ -21,6 +21,12 @@ button.search-button {
   box-shadow: red !important;
 }
 
+button.dark-mode-button {
+  padding-left: 3em;
+  padding-right: 3em;
+  margin-top: 3em;
+}
+
 .nav-custom-link,
 .nav-custom-link:hover {
   color: red;
@@ -107,4 +113,70 @@ div.height-md {
 
 .red-text {
   color: red;
+}
+
+.body-dark {
+  background: #111111;
+  transition: all 1s;
+  color: rgb(255, 254, 254) !important;
+}
+
+.body-light {
+  transition: all 1s;
+}
+
+body.body-dark button.dark-mode-button {
+  padding-left: 3em;
+  padding-right: 3em;
+  margin-top: 3em;
+  color: rgb(172, 172, 172);
+}
+body.body-dark .elevated-card {
+  transition: 0.3s;
+  background: #181818;
+}
+
+body.body-dark .elevated-card:hover {
+  box-shadow: 4px 8px 16px 4px rgba(255, 255, 255, 0.2);
+}
+
+body.body-dark .nav-link.active {
+  background-color: #181818 !important;
+  border: none !important;
+}
+
+body.body-dark .nav-link:hover {
+  border: none !important;
+}
+
+body.body-dark .dark-mode-button,
+body.body-dark .dark-mode-button:active {
+  padding-left: 3em;
+  padding-right: 3em;
+  margin-top: 3em;
+  background-color: #181818 !important;
+  border: none !important;
+  border-color: none !important;
+  box-shadow: none;
+}
+
+body.body-dark .social-icons {
+  font-size: 30px;
+  color: rgb(172, 172, 172) !important;
+}
+
+body.body-dark .card-title-custom {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+body.body-dark .modal-content {
+  background-color: #101010 !important;
+}
+
+body.body-dark .modal-header {
+  border-bottom: 1px solid #111111 !important;
+}
+
+body.body-dark .close {
+  color: rgb(255, 255, 255) !important;
 }

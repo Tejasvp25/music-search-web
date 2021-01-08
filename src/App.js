@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Result from "./Result";
 import "./App.css";
-
+import $ from "jquery";
+import Cookies from "js-cookie";
 class App extends Component {
   state = {
     show_result: false,
@@ -18,6 +19,24 @@ class App extends Component {
       });
     }
   };
+
+  toggleDarkMode = (e) => {
+    $("body").toggleClass("body-dark");
+    $("body").toggleClass("body-light");
+    if ($("body").hasClass("body-dark")) {
+      Cookies.set("dark", 1);
+    } else {
+      Cookies.set("dark", 0);
+    }
+  };
+
+  componentDidMount() {
+    $("#search-input").on("keypress", function (e) {
+      if (e.key === "Enter") {
+        $("#btn-submit").trigger("click");
+      }
+    });
+  }
 
   render() {
     return (
@@ -37,25 +56,35 @@ class App extends Component {
                 <span className="h1 app-name">Music Search</span>
               </div>
               <div className="container center">
-                <form onSubmit={this.handleSubmit}>
-                  <div className="input-group input-group-lg mt-4">
-                    <input
-                      id="search-input"
-                      type="text"
-                      className="form-control input-red"
-                      placeholder="Search Here"
-                    ></input>
-                  </div>
-                  <div>
+                <div className="input-group input-group-lg mt-4">
+                  <input
+                    id="search-input"
+                    type="text"
+                    className="form-control input-red"
+                    placeholder="Search Here"
+                  ></input>
+                </div>
+                <div className="row justify-content-center">
+                  <div className="pl-2 pr-2">
                     <button
                       id="btn-submit"
                       type="submit"
                       className="btn search-button text-white"
+                      onClick={this.handleSubmit}
                     >
                       Search
                     </button>
                   </div>
-                </form>
+                  <div className="pl-2 pr-2">
+                    <button
+                      id="btn-dark-mode"
+                      className="btn btn-light dark-mode-button"
+                      onClick={this.toggleDarkMode}
+                    >
+                      Dark Mode
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
