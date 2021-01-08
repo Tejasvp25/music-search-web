@@ -156,7 +156,7 @@ class MusicCard extends Component {
       >
         <this.SongsModal />
         <div className="row p-3">
-          <div className="col-lg-4 col-sm-6 p-2">
+          <div className="col-lg-4 col-md-6 col-sm-6 p-2">
             <img
               className="Br-10px"
               src={this.getImageUrl()}

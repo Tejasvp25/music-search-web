@@ -39,11 +39,11 @@ class MusicSection extends Component {
     } else {
       return (
         <div className="justify-content-around">
-          <div className="row pt-3">
+          <div className="row pt-3 justify-content-center">
             {this.state.data.map((e, index) => {
               return (
                 <div
-                  className="col-lg-6 col-md-12 col-sm-12"
+                  className="col-lg-4 col-md-12 col-sm-12"
                   Key={`${this.props.type}${index.toString()}`}
                 >
                   {this.props.type === "songs" ? (

@@ -43,7 +43,7 @@ class Result extends Component {
 
   render() {
     return (
-      <div className="container mt-5">
+      <div className="container-fluid mt-5">
         <h2 className="text-secondary">
           Search Result for "{this.props.query}"
         </h2>
