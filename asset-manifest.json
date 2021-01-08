@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/music-search-web/static/css/main.4e4bcc46.chunk.css",
-    "main.js": "/music-search-web/static/js/main.da337a7b.chunk.js",
-    "main.js.map": "/music-search-web/static/js/main.da337a7b.chunk.js.map",
+    "main.css": "/music-search-web/static/css/main.89337fb9.chunk.css",
+    "main.js": "/music-search-web/static/js/main.7e24a2e6.chunk.js",
+    "main.js.map": "/music-search-web/static/js/main.7e24a2e6.chunk.js.map",
     "runtime-main.js": "/music-search-web/static/js/runtime-main.2e579efa.js",
     "runtime-main.js.map": "/music-search-web/static/js/runtime-main.2e579efa.js.map",
-    "static/js/2.44713b16.chunk.js": "/music-search-web/static/js/2.44713b16.chunk.js",
-    "static/js/2.44713b16.chunk.js.map": "/music-search-web/static/js/2.44713b16.chunk.js.map",
+    "static/js/2.39366166.chunk.js": "/music-search-web/static/js/2.39366166.chunk.js",
+    "static/js/2.39366166.chunk.js.map": "/music-search-web/static/js/2.39366166.chunk.js.map",
     "index.html": "/music-search-web/index.html",
-    "static/css/main.4e4bcc46.chunk.css.map": "/music-search-web/static/css/main.4e4bcc46.chunk.css.map",
-    "static/js/2.44713b16.chunk.js.LICENSE.txt": "/music-search-web/static/js/2.44713b16.chunk.js.LICENSE.txt"
+    "static/css/main.89337fb9.chunk.css.map": "/music-search-web/static/css/main.89337fb9.chunk.css.map",
+    "static/js/2.39366166.chunk.js.LICENSE.txt": "/music-search-web/static/js/2.39366166.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2e579efa.js",
-    "static/js/2.44713b16.chunk.js",
-    "static/css/main.4e4bcc46.chunk.css",
-    "static/js/main.da337a7b.chunk.js"
+    "static/js/2.39366166.chunk.js",
+    "static/css/main.89337fb9.chunk.css",
+    "static/js/main.7e24a2e6.chunk.js"
   ]
 }
