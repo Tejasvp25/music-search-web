@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/music-search-web/static/css/main.4fbc2127.chunk.css",
-    "main.js": "/music-search-web/static/js/main.6fc4610d.chunk.js",
-    "main.js.map": "/music-search-web/static/js/main.6fc4610d.chunk.js.map",
+    "main.css": "/music-search-web/static/css/main.7e2ba21a.chunk.css",
+    "main.js": "/music-search-web/static/js/main.5cc6a411.chunk.js",
+    "main.js.map": "/music-search-web/static/js/main.5cc6a411.chunk.js.map",
     "runtime-main.js": "/music-search-web/static/js/runtime-main.2e579efa.js",
     "runtime-main.js.map": "/music-search-web/static/js/runtime-main.2e579efa.js.map",
     "static/js/2.39366166.chunk.js": "/music-search-web/static/js/2.39366166.chunk.js",
     "static/js/2.39366166.chunk.js.map": "/music-search-web/static/js/2.39366166.chunk.js.map",
     "index.html": "/music-search-web/index.html",
-    "static/css/main.4fbc2127.chunk.css.map": "/music-search-web/static/css/main.4fbc2127.chunk.css.map",
+    "static/css/main.7e2ba21a.chunk.css.map": "/music-search-web/static/css/main.7e2ba21a.chunk.css.map",
     "static/js/2.39366166.chunk.js.LICENSE.txt": "/music-search-web/static/js/2.39366166.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2e579efa.js",
     "static/js/2.39366166.chunk.js",
-    "static/css/main.4fbc2127.chunk.css",
-    "static/js/main.6fc4610d.chunk.js"
+    "static/css/main.7e2ba21a.chunk.css",
+    "static/js/main.5cc6a411.chunk.js"
   ]
 }
