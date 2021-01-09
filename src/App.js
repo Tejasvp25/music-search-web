@@ -101,10 +101,7 @@ class App extends Component {
                   href="https://github.com/Torrent-Search/music-search-web"
                   className="social-custom-link"
                 >
-                  <i
-                    class="devicon-github-original"
-                    style={{ color: "black" }}
-                  ></i>
+                  <i class="devicon-github-original social-icons"></i>
                 </a>
               </div>
               <div className="m-2">
@@ -112,10 +109,7 @@ class App extends Component {
                   href="mailto:tejasvp25@gmail.com"
                   className="social-custom-link"
                 >
-                  <i
-                    class="devicon-google-plain"
-                    style={{ color: "black" }}
-                  ></i>
+                  <i class="devicon-google-plain social-icons"></i>
                 </a>
               </div>
             </div>
