@@ -94,7 +94,6 @@ class App extends Component {
         </main>
         <footer className="page-footer m-5">
           <div className="social-icons">
-            <h3 style={{ color: "red" }}>Made with ❤️ in India</h3>
             <div className="row justify-content-center">
               <div className="m-2">
                 <a
@@ -121,9 +120,18 @@ class App extends Component {
               <h5 className="ml-2">Made with React</h5>
             </div>
           </div>
-          <br />
-          <div className="row justify-content-center text-secondary">
-            <span> Tejasvp25 © 2020</span>
+          <div className="row justify-content-center text-center pt-1">
+            <span className="text-secondary">
+              Tejasvp25 © 2020 · Made with{" "}
+              <span role="img">
+                <img
+                  src="https://madewithlove.org.in/favicon-16x16.png?v=ngkxyOrw9y"
+                  alt="love"
+                />
+                &nbsp;
+              </span>
+              in India
+            </span>
           </div>
         </footer>
       </div>
