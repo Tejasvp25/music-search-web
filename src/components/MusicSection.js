@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import MusicCard from "./MusicCard";
 import { NoContentFound, ServerError } from "./CustomError";
+import ClipLoader from "react-spinners/ClipLoader";
+
 class MusicSection extends Component {
   state = {
     data: undefined,
@@ -22,11 +24,8 @@ class MusicSection extends Component {
       return (
         <div className="justify-content-around">
           <br></br>
-
-          <div className="d-flex justify-content-center">
-            <div class="spinner-border text-dark" role="status">
-              <span class="sr-only">Loading...</span>
-            </div>
+          <div className="container p-5">
+            <ClipLoader color="red" />
           </div>
         </div>
       );

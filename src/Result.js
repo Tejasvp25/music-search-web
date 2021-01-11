@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { NoContentFound } from "./components/CustomError";
 import MusicSection from "./components/MusicSection";
 import { getMusicRawSearchResult } from "./utils/network_utils";
-
+import ClipLoader from "react-spinners/ClipLoader";
 class Result extends Component {
   state = {
     songs: undefined,
@@ -21,10 +21,8 @@ class Result extends Component {
   GetMusicSection = (props) => {
     if (this.state.songs === undefined) {
       return (
-        <div className="row justify-content-center p-3">
-          <div class="spinner-border text-dark" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
+        <div className="container p-5">
+          <ClipLoader color="red" />
         </div>
       );
     }
