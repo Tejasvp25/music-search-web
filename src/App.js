@@ -25,12 +25,17 @@ class App extends Component {
     $("body").toggleClass("body-light");
     if ($("body").hasClass("body-dark")) {
       Cookies.set("dark", 1);
+      document.getElementById("btn-dark-mode").innerHTML = "Light Mode";
     } else {
       Cookies.set("dark", 0);
+      document.getElementById("btn-dark-mode").innerHTML = "Dark Mode";
     }
   };
 
   componentDidMount() {
+    if ($("body").hasClass("body-dark")) {
+      document.getElementById("btn-dark-mode").innerHTML = "Light Mode";
+    }
     $("#search-input").on("keypress", function (e) {
       if (e.key === "Enter") {
         $("#btn-submit").trigger("click");
