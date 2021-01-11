@@ -118,11 +118,11 @@ class App extends Component {
               </div>
             </div>
             <div className="row justify-content-center">
+              <h5 className="ml-2">Made with React</h5>&nbsp;
               <i
                 class="devicon-react-original-wordmark colored"
-                style={{ fontSize: "35px" }}
+                style={{ fontSize: "30px" }}
               ></i>
-              <h5 className="ml-2">Made with React</h5>
             </div>
           </div>
           <div className="row justify-content-center text-center pt-1">
