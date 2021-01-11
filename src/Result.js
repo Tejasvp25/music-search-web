@@ -7,6 +7,7 @@ class Result extends Component {
   state = {
     songs: undefined,
     albums: undefined,
+    server_is_waking: false,
   };
 
   componentDidMount() {
@@ -14,11 +15,35 @@ class Result extends Component {
       this.setState({
         songs: res.data["songs"]["data"],
         albums: res.data["albums"]["data"],
+        // server_is_waking: false,
       });
     });
+    setTimeout(this.setServerIsWaking, 10000);
   }
 
+  setServerIsWaking = () => {
+    if (this.state.songs === undefined) {
+      this.setState({
+        server_is_waking: true,
+      });
+    }
+  };
+
   GetMusicSection = (props) => {
+    console.log(this.state.server_is_waking);
+    if (this.state.server_is_waking) {
+      return (
+        <div className="container p-5">
+          <div className="col">
+            <h4 className="text-monospace text-muted">
+              Sorry for inconvenience <br /> Wait for Few Seconds while server
+              is Waking
+            </h4>
+            <ClipLoader color="red" />
+          </div>
+        </div>
+      );
+    }
     if (this.state.songs === undefined) {
       return (
         <div className="container p-5">
