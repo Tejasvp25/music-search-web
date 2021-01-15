@@ -11,8 +11,8 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const query = document.getElementById("search-input").value;
-    if (query.trim().length > 0) {
+    const query = document.getElementById("search-input").value.trim();
+    if (query.length > 0 && query !== this.state.search_query) {
       this.setState({
         show_result: true,
         search_query: query,
@@ -105,7 +105,7 @@ class App extends Component {
                   href="https://github.com/Torrent-Search/music-search-web"
                   className="social-custom-link"
                 >
-                  <i class="devicon-github-original social-icons"></i>
+                  <i className="devicon-github-original social-icons"></i>
                 </a>
               </div>
               <div className="m-2">
@@ -113,14 +113,14 @@ class App extends Component {
                   href="mailto:tejasvp25@gmail.com"
                   className="social-custom-link"
                 >
-                  <i class="devicon-google-plain social-icons"></i>
+                  <i className="devicon-google-plain social-icons"></i>
                 </a>
               </div>
             </div>
             <div className="row justify-content-center">
               <h5 className="ml-2">Made with React</h5>&nbsp;
               <i
-                class="devicon-react-original-wordmark colored"
+                className="devicon-react-original-wordmark colored"
                 style={{ fontSize: "30px" }}
               ></i>
             </div>
