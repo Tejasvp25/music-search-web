@@ -33,32 +33,50 @@ class MusicCard extends Component {
     if (this.props.type === "songs") {
       return (
         <div className="justify-content-center p2">
-          <div className="row justify-content-center">
-            <div className="col justify-content-center pb-2">
-              <span className="font-small float-left">Song Title</span>
-              <span className="font-weight-bold float-left"> {song_title}</span>
-            </div>
-            <div className="col justify-content-center pb-2">
-              <span className="font-small float-left">Album</span>
-              <span className="font-weight-bold float-left">
-                {prop_obj.album}
-              </span>
-            </div>
-            {prop_obj.more_info === undefined ? null : (
-              <div className="col justify-content-center pb-2">
-                <span className="font-small float-left">Primary Artists</span>
+          <div className="row">
+            <div className="col-6 justify-content-around pb-2">
+              <div>
+                <span className="font-small float-left">Song Title</span>
+              </div>
+              <div>
                 <span className="font-weight-bold float-left">
-                  {prop_obj.more_info.primary_artists}
+                  {song_title}
                 </span>
               </div>
+            </div>
+            <div className="col-6 justify-content-around pb-2">
+              <div>
+                <span className="font-small float-left">Album</span>
+              </div>
+              <div>
+                <span className="font-weight-bold float-left">
+                  {prop_obj.album}
+                </span>
+              </div>
+            </div>
+            {prop_obj.more_info === undefined ? null : (
+              <div className="col-6 justify-content-around pb-2">
+                <div>
+                  <span className="font-small float-left">Primary Artists</span>
+                </div>
+                <div>
+                  <span className="font-weight-bold float-left">
+                    {prop_obj.more_info.primary_artists}
+                  </span>
+                </div>
+              </div>
             )}
-            <div className="col justify-content-center pb-2">
-              <span className="font-small float-left">Singers</span>
-              <span className="font-weight-bold float-left">
-                {prop_obj.more_info === undefined
-                  ? prop_obj.singers
-                  : prop_obj.more_info.singers}
-              </span>
+            <div className="col-6 justify-content-around pb-2">
+              <div>
+                <span className="font-small float-left">Singers</span>
+              </div>
+              <div>
+                <span className="font-weight-bold float-left">
+                  {prop_obj.more_info === undefined
+                    ? prop_obj.singers
+                    : prop_obj.more_info.singers}
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -67,22 +85,30 @@ class MusicCard extends Component {
     return (
       <div className="justify-content-center p2">
         <div className="row justify-content-center">
-          <div className="col justify-content-center">
-            <span className="font-small float-left">Album Title</span>
-            <span className="font-weight-bold float-left">
-              {prop_obj.title === undefined ? "" : prop_obj.title}
-            </span>
+          <div className="col-6 justify-content-around">
+            <div>
+              <span className="font-small float-left">Album Title</span>
+            </div>
+            <div>
+              <span className="font-weight-bold float-left">
+                {prop_obj.title === undefined ? "" : prop_obj.title}
+              </span>
+            </div>
           </div>
-          <div className="col justify-content-center">
-            <span className="font-small float-left">Music</span>
-            <span className="font-weight-bold float-left">
-              {prop_obj.music}
-            </span>
+          <div className="col-6 justify-content-around">
+            <div>
+              <span className="font-small float-left">Music</span>
+            </div>
+            <div>
+              <span className="font-weight-bold float-left">
+                {prop_obj.music}
+              </span>
+            </div>
           </div>
         </div>
 
         {this.state.songs === undefined ? null : (
-          <div className="row justify-content-center mt-2">
+          <div className="row justify-content-around mt-2">
             <button
               className="btn btn-danger"
               data-toggle="modal"
@@ -109,7 +135,7 @@ class MusicCard extends Component {
           aria-labelledby={`#${albumid}-title`}
           aria-hidden="true"
         >
-          <div className="modal-dialog modal-lg" role="document">
+          <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id={`${albumid}-title`}>
