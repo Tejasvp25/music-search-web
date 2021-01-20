@@ -59,6 +59,7 @@ module.exports = (env, argv) => {
       hot: true,
       contentBase: "./build",
       historyApiFallback: true, //For react router
+      open: true,
     };
     config.output.publicPath = "/";
   }
