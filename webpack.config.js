@@ -102,43 +102,8 @@ module.exports = (env, argv) => {
     };
   }
 
-  if (argv.mode === "production-gh") {
-    config.entry = ["./src"];
-    config.devtool = "source-map";
-    config.output.filename = "[name].[chunkhash].bundle.js";
-    config.output.publicPath =
-      "https://Torrent-Search.github.io/torrent-search-web";
-    config.output.chunkFilename = "[name].[chunkhash].bundle.js";
-    config.optimization = {
-      moduleIds: "hashed",
-      runtimeChunk: {
-        name: "manifest",
-      },
-      splitChunks: {
-        cacheGroups: {
-          vendors: {
-            test: /node_modules/,
-            name: "vendors",
-            chunks: "all",
-          },
-        },
-      },
-    };
-    config.plugins.push(
-      new BundleAnalyzerPlugin({
-        analyzerMode: "static",
-      }),
-      new CompressionPlugin({
-        test: /\.js(\?.*)?$/i,
-      })
-    );
-    config.performance = {
-      hints: "warning",
-      // Calculates sizes of gziped bundles.
-      assetFilter: function (assetFilename) {
-        return assetFilename.endsWith(".js.gz");
-      },
-    };
+  if (env === "production-gh") {
+    config.output.publicPath = "/torrent-search-web";
   }
 
   console.log("Webpack config\n");

@@ -18,11 +18,11 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "predeploy": "webpack -p --mode=production-gh",
+    "predeploy": "webpack -p --mode=production --env production-gh",
     "deploy": "gh-pages -d build",
     "start": "webpack-dev-server --mode=development --display-error-details",
     "build": "webpack -p --mode=production",
-    "build-gh": "webpack -p --mode=production-gh",
+    "build-gh": "webpack -p --mode=production --env production-gh",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
