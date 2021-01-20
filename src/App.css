@@ -90,12 +90,13 @@ input[type="text"].form-control:focus {
 }
 .elevated-card {
   box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
+  transition: 0.5s;
+  background: rgba(0, 0, 0, 0.05);
   max-height: 100%;
 }
 
 .elevated-card:hover {
-  box-shadow: 4px 8px 16px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 8px 16px 4px rgba(0, 0, 0, 0.4);
 }
 
 .limit-word {
@@ -148,7 +149,7 @@ body.body-dark button.dark-mode-button {
   color: rgb(172, 172, 172);
 }
 body.body-dark .elevated-card {
-  transition: 0.3s;
+  transition: 0.5s;
   background: #181818;
 }
 
