@@ -9,7 +9,6 @@ const CopyPlugin = require("copy-webpack-plugin");
 let config = {
   output: {
     path: path.resolve(__dirname, "build"),
-    publicPath: "https://Torrent-Search.github.io/torrent-search-web",
     filename: "bundle.js",
   },
   resolve: {
@@ -61,12 +60,15 @@ module.exports = (env, argv) => {
       contentBase: "./build",
       historyApiFallback: true, //For react router
     };
+    config.output.publicPath = "/";
   }
 
   if (argv.mode === "production") {
     config.entry = ["./src"];
     config.devtool = "source-map";
     config.output.filename = "[name].[chunkhash].bundle.js";
+    config.output.publicPath =
+      "https://Torrent-Search.github.io/torrent-search-web";
     config.output.chunkFilename = "[name].[chunkhash].bundle.js";
     config.optimization = {
       moduleIds: "hashed",
