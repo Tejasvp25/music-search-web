@@ -38,6 +38,7 @@ class MusicCard extends Component {
               <div>
                 <span className="font-small float-left">Song Title</span>
               </div>
+              <br />
               <div>
                 <span className="font-weight-bold float-left">
                   {song_title}
@@ -48,6 +49,7 @@ class MusicCard extends Component {
               <div>
                 <span className="font-small float-left">Album</span>
               </div>
+              <br />
               <div>
                 <span className="font-weight-bold float-left">
                   {prop_obj.album}
@@ -59,6 +61,7 @@ class MusicCard extends Component {
                 <div>
                   <span className="font-small float-left">Primary Artists</span>
                 </div>
+                <br />
                 <div>
                   <span className="font-weight-bold float-left">
                     {prop_obj.more_info.primary_artists}
@@ -70,6 +73,7 @@ class MusicCard extends Component {
               <div>
                 <span className="font-small float-left">Singers</span>
               </div>
+              <br />
               <div>
                 <span className="font-weight-bold float-left">
                   {prop_obj.more_info === undefined
@@ -89,6 +93,7 @@ class MusicCard extends Component {
             <div>
               <span className="font-small float-left">Album Title</span>
             </div>
+            <br />
             <div>
               <span className="font-weight-bold float-left">
                 {prop_obj.title === undefined ? "" : prop_obj.title}
@@ -99,6 +104,7 @@ class MusicCard extends Component {
             <div>
               <span className="font-small float-left">Music</span>
             </div>
+            <br />
             <div>
               <span className="font-weight-bold float-left">
                 {prop_obj.music}
