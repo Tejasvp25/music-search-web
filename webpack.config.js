@@ -103,7 +103,7 @@ module.exports = (env, argv) => {
   }
 
   if (env === "production-gh") {
-    config.output.publicPath = "/torrent-search-web";
+    config.output.publicPath = "/music-search-web";
   }
 
   console.log("Webpack config\n");
