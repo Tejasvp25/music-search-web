@@ -141,7 +141,7 @@ class MusicCard extends Component {
           aria-labelledby={`#${albumid}-title`}
           aria-hidden="true"
         >
-          <div className="modal-dialog" role="document">
+          <div className="modal-dialog modal-dialog-scrollable" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id={`${albumid}-title`}>
