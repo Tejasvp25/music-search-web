@@ -132,6 +132,12 @@ span.font-weight-bold {
   word-wrap: break-word;
 }
 
+img.bmc {
+  max-height: 50px !important;
+  max-width: 160px !important;
+  color: #000;
+}
+
 .body-dark {
   background: #111111;
   transition: all 1s;
