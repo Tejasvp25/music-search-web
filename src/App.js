@@ -184,6 +184,7 @@ class App extends Component {
                     type="text"
                     className="form-control input-red"
                     placeholder="Search Here"
+                    autoComplete="off"
                   ></input>
                 </div>
                 <div className="row justify-content-center">

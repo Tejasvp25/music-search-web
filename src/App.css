@@ -203,3 +203,8 @@ body.body-dark .modal-header {
 body.body-dark .close {
   color: rgb(255, 255, 255) !important;
 }
+
+body.body-dark .form-control {
+  background-color: #181818;
+  color: rgb(172, 172, 172) !important;
+}
