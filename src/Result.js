@@ -8,24 +8,52 @@ class Result extends Component {
     songs: undefined,
     albums: undefined,
     server_is_waking: false,
+    retry: true,
   };
 
   componentDidMount() {
     getMusicRawSearchResult(this.props.query).then((res) => {
-      this.setState({
-        songs: res.data["songs"]["data"],
-        albums: res.data["albums"]["data"],
-        // server_is_waking: false,
-      });
+      if (res.status === 200) {
+        this.setState({
+          songs: res.data["songs"]["data"],
+          albums: res.data["albums"]["data"],
+          server_is_waking: false,
+          retry: false,
+        });
+      } else if (res.status === 204) {
+        this.setState({
+          retry: false,
+        });
+      }
     });
-    setTimeout(this.setServerIsWaking, 10000);
+    setInterval(this.setServerIsWaking, 10000);
   }
 
   setServerIsWaking = () => {
+    if (!this.state.retry) {
+      return;
+    }
     if (this.state.songs === undefined) {
       this.setState({
         server_is_waking: true,
       });
+
+      if (this.state.retry) {
+        getMusicRawSearchResult(this.props.query).then((res) => {
+          if (res.status === 200) {
+            this.setState({
+              songs: res.data["songs"]["data"],
+              albums: res.data["albums"]["data"],
+              server_is_waking: false,
+            });
+          } else if (res.status === 204) {
+            this.setState({
+              retry: false,
+              server_is_waking: false,
+            });
+          }
+        });
+      }
     }
   };
 
