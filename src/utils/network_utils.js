@@ -2,11 +2,14 @@ import Axios from "axios";
 
 const BASE_URL = "https://torr-scraper.herokuapp.com/api/";
 
+const instance = Axios.create({ baseURL: BASE_URL, timeout: 10000 });
+
 export async function getMusicRawSearchResult(search_query) {
-  let url = `${BASE_URL}jiosaavnraw?search=${search_query}`;
+  const url = `jiosaavnraw?search=${search_query}`;
 
   return new Promise(function (resolve, reject) {
-    Axios.get(url)
+    instance
+      .get(url)
       .then((res) => {
         return resolve(res);
       })
@@ -17,10 +20,11 @@ export async function getMusicRawSearchResult(search_query) {
 }
 
 export async function getMusicWithData(search_query) {
-  let url = `${BASE_URL}jiosaavnsong?search=${search_query}`;
+  const url = `jiosaavnsong?search=${search_query}`;
 
   return new Promise(function (resolve, reject) {
-    Axios.get(url)
+    instance
+      .get(url)
       .then((res) => {
         resolve(res);
       })
@@ -31,10 +35,11 @@ export async function getMusicWithData(search_query) {
 }
 
 export async function getMusicAlbum(search_query) {
-  let url = `${BASE_URL}jiosaavnalbum?search=${search_query}`;
+  const url = `jiosaavnalbum?search=${search_query}`;
 
   return new Promise(function (resolve, reject) {
-    Axios.get(url)
+    instance
+      .get(url)
       .then((res) => {
         resolve(res);
       })
@@ -45,10 +50,11 @@ export async function getMusicAlbum(search_query) {
 }
 
 export async function getMusicPlaylist(search_query) {
-  let url = `${BASE_URL}jiosaavnplaylist?search=${search_query}`;
+  const url = `jiosaavnplaylist?search=${search_query}`;
 
   return new Promise(function (resolve, reject) {
-    Axios.get(url)
+    instance
+      .get(url)
       .then((res) => {
         resolve(res);
       })
