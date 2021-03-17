@@ -63,3 +63,33 @@ export async function getMusicPlaylist(search_query) {
       });
   });
 }
+
+export async function getYoutubeSearchResult(search_query) {
+  const url = `yt?search=${search_query}`;
+
+  return new Promise(function (resolve, reject) {
+    instance
+      .get(url)
+      .then((res) => {
+        resolve(res);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+}
+
+export async function getYoutubeAudioLink(url_suffix) {
+  const url = `yturl?search=${url_suffix}`;
+
+  return new Promise(function (resolve, reject) {
+    instance
+      .get(url)
+      .then((res) => {
+        resolve(res);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+}

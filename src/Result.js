@@ -3,6 +3,7 @@ import { NoContentFound } from "./components/CustomError";
 import MusicSection from "./components/MusicSection";
 import { getMusicRawSearchResult } from "./utils/network_utils";
 import ClipLoader from "react-spinners/ClipLoader";
+import YtSection from "./components/YtSection";
 class Result extends Component {
   state = {
     songs: undefined,
@@ -108,6 +109,12 @@ class Result extends Component {
         <span className="h1">Albums</span>
         <div>
           <this.GetMusicSection type="albums" data={this.state.albums} />
+        </div>
+        <br />
+        <br />
+        <span className="h1">Youtube Audio Only (Experimental)</span>
+        <div>
+          <YtSection search={this.props.query} />;
         </div>
       </div>
     );
