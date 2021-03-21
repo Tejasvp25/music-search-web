@@ -1,8 +1,14 @@
 import React, { useState } from "react";
-import { getYoutubeAudioLink } from "../utils/network_utils";
+import { getYoutubeAudioLink, BASE_URL } from "../utils/network_utils";
+
+const URL_PREFIX = BASE_URL.substring(0, 35);
+
 const YtCard = ({ ytItem }) => {
   const [audioLink, setaudioLink] = useState(undefined);
   const [request, setRequested] = useState(false);
+  const [error, setError] = useState(false);
+
+  ytItem.title = ytItem.title.replaceAll(/\s/g, "_");
   return (
     <div className="col-lg-4 col-md-12 col-sm-12">
       <div className="border-black br-10px elevated-card grey-bg p-2 ">
@@ -24,10 +30,13 @@ const YtCard = ({ ytItem }) => {
                     e.preventDefault();
                     if (!request) {
                       setRequested(true);
-                      getYoutubeAudioLink(ytItem.url_suffix)
+                      getYoutubeAudioLink(ytItem.url_suffix, ytItem.title)
                         .then((res) => {
                           if (res.status === 200) {
-                            setaudioLink(res.data);
+                            setaudioLink(URL_PREFIX + res.data);
+                          }
+                          if (res.status === 204) {
+                            setError(true);
                           }
                         })
                         .then(() => {
@@ -36,19 +45,18 @@ const YtCard = ({ ytItem }) => {
                     }
                   }}
                 >
-                  Get Link from Server
+                  {error
+                    ? "Error Occurred. Please Try again later"
+                    : request
+                    ? "Downloading and Converting on Server"
+                    : "Get Download Link"}
                 </button>
               </div>
             ) : (
               <div className="justify-content-center mt-2">
-                <button
-                  className="btn btn-danger"
-                  onClick={() => {
-                    window.open(audioLink);
-                  }}
-                >
-                  Download Song
-                </button>
+                <a href={audioLink}>
+                  <button className="btn btn-danger">Download Song</button>
+                </a>
               </div>
             )}
           </div>

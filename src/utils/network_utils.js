@@ -1,15 +1,15 @@
 import Axios from "axios";
 
-const BASE_URL = "https://torr-scraper.herokuapp.com/api/";
+export const BASE_URL = "https://torr-scraper.herokuapp.com/api/";
 
-const instance = Axios.create({ baseURL: BASE_URL, timeout: 10000 });
+const instance = Axios.create({ baseURL: BASE_URL });
 
 export async function getMusicRawSearchResult(search_query) {
   const url = `jiosaavnraw?search=${search_query}`;
 
   return new Promise(function (resolve, reject) {
     instance
-      .get(url)
+      .get(url, { timeout: 10000 })
       .then((res) => {
         return resolve(res);
       })
@@ -24,7 +24,7 @@ export async function getMusicWithData(search_query) {
 
   return new Promise(function (resolve, reject) {
     instance
-      .get(url)
+      .get(url, { timeout: 10000 })
       .then((res) => {
         resolve(res);
       })
@@ -39,7 +39,7 @@ export async function getMusicAlbum(search_query) {
 
   return new Promise(function (resolve, reject) {
     instance
-      .get(url)
+      .get(url, { timeout: 10000 })
       .then((res) => {
         resolve(res);
       })
@@ -54,7 +54,7 @@ export async function getMusicPlaylist(search_query) {
 
   return new Promise(function (resolve, reject) {
     instance
-      .get(url)
+      .get(url, { timeout: 10000 })
       .then((res) => {
         resolve(res);
       })
@@ -69,7 +69,7 @@ export async function getYoutubeSearchResult(search_query) {
 
   return new Promise(function (resolve, reject) {
     instance
-      .get(url)
+      .get(url, { timeout: 10000 })
       .then((res) => {
         resolve(res);
       })
@@ -79,12 +79,12 @@ export async function getYoutubeSearchResult(search_query) {
   });
 }
 
-export async function getYoutubeAudioLink(url_suffix) {
-  const url = `yturl?search=${url_suffix}`;
+export async function getYoutubeAudioLink(url_suffix, title) {
+  const url = `yturl?search=${url_suffix}&title=${title}`;
 
   return new Promise(function (resolve, reject) {
     instance
-      .get(url)
+      .get(url, { timeout: 30000 })
       .then((res) => {
         resolve(res);
       })
