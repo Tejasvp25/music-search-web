@@ -21,11 +21,11 @@ const YtCard = ({ ytItem }) => {
             ></img>
           </div>
           <div className="col-lg-8 col-sm-6 align-content-start">
-            <div className="justify-content-center p2">{ytItem.title}</div>
-            {audioLink === undefined ? (
-              <div className="justify-content-center mt-2">
+            <span style={{ "word-wrap": "break-word" }}>{ytItem.title}</span>
+            <div className="justify-content-center">
+              {audioLink === undefined ? (
                 <button
-                  className="btn btn-danger"
+                  className="btn btn-danger mt-2"
                   onClick={(e) => {
                     e.preventDefault();
                     if (!request) {
@@ -39,6 +39,9 @@ const YtCard = ({ ytItem }) => {
                             setError(true);
                           }
                         })
+                        .catch((e) => {
+                          setError(true);
+                        })
                         .then(() => {
                           setRequested(false);
                         });
@@ -51,14 +54,14 @@ const YtCard = ({ ytItem }) => {
                     ? "Downloading and Converting on Server"
                     : "Get Download Link"}
                 </button>
-              </div>
-            ) : (
-              <div className="justify-content-center mt-2">
-                <a href={audioLink}>
-                  <button className="btn btn-danger">Download Song</button>
-                </a>
-              </div>
-            )}
+              ) : (
+                <div className="justify-content-center mt-2">
+                  <a href={audioLink}>
+                    <button className="btn btn-danger">Download Song</button>
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
