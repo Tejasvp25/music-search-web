@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import YtCard from "./YtCard";
 import { getYoutubeSearchResult } from "../utils/network_utils";
+import isDurationExceed from "../utils/misc_utils";
+
 import { NoContentFound, ServerError } from "./CustomError";
 import ClipLoader from "react-spinners/ClipLoader";
 class YtSection extends Component {
@@ -94,6 +96,9 @@ class YtSection extends Component {
         <div className="justify-content-around">
           <div className="row pt-3 justify-content-center">
             {this.state.data.map((e, index) => {
+              if (isDurationExceed(e.duration)) {
+                return null;
+              }
               return (
                 <>
                   <YtCard ytItem={e} Key={`k${index.toString()}`} />
